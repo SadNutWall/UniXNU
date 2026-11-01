@@ -63,7 +63,8 @@ def source_identity(ctx, module):
         try:
             top = Path(git(module.path, 'rev-parse', '--show-toplevel').strip()).resolve()
             if top == module.path.resolve():
-                return repository_identity(git(module.path, 'remote', 'get-url', 'origin').strip())
+                # get-url expands url.*.insteadOf mirrors and erases the official identity.
+                return repository_identity(git(module.path, 'config', '--get', 'remote.origin.url').strip())
         except Error:
             pass
         for base in (ctx.device, ctx.root, getattr(getattr(ctx, 'soc', None), 'path', None)):
