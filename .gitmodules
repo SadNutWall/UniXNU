@@ -21,7 +21,7 @@
 	url = https://github.com/UniXNU/QcomGeniSpi.git
 [submodule "drivers/AppleKeyStoreState"]
 	path = drivers/AppleKeyStoreState
-	url = https://github.com/UniXNU/AppleKeyStoreState.git
+	url = https://github.com/SadNutWall/AppleKeyStoreState.git
 [submodule "drivers/AdrenoMetal"]
 	path = drivers/AdrenoMetal
 	url = https://github.com/UniXNU/AdrenoMetal.git
