@@ -168,6 +168,10 @@ def build(ctx, kernel=None):
             command.append('--gpu-addon')
         if adt.get('ipad_identity'):
             command.append('--ipad-identity')
+        if adt.get('phone_identity'):
+            command.append('--phone-identity')
+            if adt.get('phone_model') is not None:
+                command += ['--phone-model', str(adt['phone_model'])]
         if data and adt.get('persistent_data'):
             command.append('--persistent-data')
         # Fixups of signed text (patches/xnu/native-text-fixup.patch) travel in /chosen/text-fixups, outside the 1000-byte command line.
